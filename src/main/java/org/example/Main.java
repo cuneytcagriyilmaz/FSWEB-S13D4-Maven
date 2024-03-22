@@ -1,19 +1,23 @@
 package org.example;
 
+import org.example.enums.Plan;
+
 public class Main {
     public static void main(String[] args) {
-        Point first = new Point(6, 5);
+        Healthplan healthplan = new Healthplan(1, "Cagri HealthPlan ", Plan.BASIC);
+        System.out.println(healthplan);
 
-        Point second = new Point(3, 1);
+        String[] healthPlans = new String[3];
+        Employee employee = new Employee(1, "cagri", "cagri@example.com", "123456", healthPlans);
+        employee.addHealthPlan(0, "Plan1");
+        employee.addHealthPlan(1, "Plan2");
+        employee.addHealthPlan(2, "Plan3");
+        System.out.println(employee);
 
-        System.out.println("distance(0,0)= " + first.distance());
-
-        System.out.println("distance(second)= " + first.distance(second));
-
-        System.out.println("distance(2,2)= " + first.distance(2, 2));
-
-        Point point = new Point(0,0);
-
-        System.out.println("distance()= " + point.distance());
+        String[] developerNames = new String[5];
+        Company company = new Company(1, "Cagri Company", 10000.0, developerNames);
+        company.addEmployee(0, "cuneyt");
+        company.addEmployee(1, "yilmaz");
+        System.out.println(company);
     }
 }
